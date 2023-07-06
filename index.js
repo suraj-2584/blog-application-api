@@ -1,6 +1,7 @@
-const express=require('express');
+
 const app=express();
 const cors=require('cors')
+const express=require('express');
 const mongoose=require('mongoose')
 const User = require('./models/User.js')
 const bcrypt = require('bcryptjs')
@@ -12,6 +13,9 @@ const secret= 'r298rh29rh2973hr982'
 const salt = bcrypt.genSaltSync(10);
 mongoose.connect('mongodb+srv://suraj:j9dr8ecLqwgW5epK@selab.n0utwej.mongodb.net/?retryWrites=true&w=majority')
 
+app.get('/',(req,res)=>{
+    res.send('hello')
+})
 app.use(cookieParser());
 
 app.use(cors({
